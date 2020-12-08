@@ -1,8 +1,8 @@
 {
   "mojanalytics-deploy": "v0.2.3",
-  "disable_authentication": false,
+  "disable_authentication": true,
   "allowed_ip_ranges": [
-    "DOM1"
+    "Any"
   ],
   "port": 8080
 }
