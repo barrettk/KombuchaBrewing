@@ -1,0 +1,12 @@
+name: Kombucha
+title: Kombucha
+username:
+account: kylebarrett
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3355435
+bundleId: 3945627
+url: https://kylebarrett.shinyapps.io/Kombucha/
+when: 1607127768.82122
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,186 @@
+
+ .main-header .logo {
+     font-family:"Montserrat", sans-serif ;
+     font-weight:bold;
+     letter-spacing:-1px; 
+     font-size:30px; 
+     color:#ffffff;
+     padding-top:10px;
+}
+ .skin-midnight h4 {
+     font-family: "Montserrat", Times, serif;
+     font-weight: 300;
+     font-size: 26px;
+     color: #000062;
+}
+ .skin-midnight h5 {
+     font-family: "Montserrat", Times, serif;
+     font-weight: 300;
+     font-size: 20px;
+}
+.h1, .h3, .h4, .h5, .h6, h1, h3, h4, h5, h6 {
+     font-family: "Montserrat", Times, serif;
+}
+.h2, h2 {
+     font-family: "Times New Roman", Times, serif;
+     font-weight: 300;
+     font-size: 34px;
+}
+.fa-box-open:before {
+    content: "\f49e";
+    font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+}
+.fa-box:before {
+    content: "\f466";
+    font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+}
+
+ .modal-body{
+     max-height:700px;
+     align-content:center;
+     border: 2px solid white;
+     border-radius: 5px;
+     background-color: white;
+}
+ .modal-sm {
+     max-width:1200px; 
+     align-content:center;
+     border-radius: 5px;
+     border: 2px solid white;
+}
+ .sidebar {
+     height:90vh;
+     overflow-y: visible;
+}
+ .skin-midnight .main-header > .logo {
+     color:#ffffff;
+     border-bottom:0 solid transparent;
+     border-right:1px solid #003B73;
+     padding:3px;
+     background-color: #133467;
+}
+
+.skin-midnight .main-header .navbar {
+    background-color: #133467;
+}
+.skin-midnight .wrapper, .skin-midnight .main-sidebar, .skin-midnight .left-side {
+    background-color: #133467;
+}
+.sidebar-mini.sidebar-collapse .main-sidebar {
+    width: 75px!important;
+}
+.sidebar-mini.sidebar-collapse .main-header .logo {
+    width: 75px;
+    text-align: center;
+}
+.sidebar-mini.sidebar-collapse .main-header .navbar {
+    margin-left: 75px;
+}
+ .skin-midnight .main-header > .logo:hover {
+}
+ .nav-tabs-custom > .nav-tabs > li.active {
+     border-top-color:#6CACE4 
+}
+.skin-midnight .sidebar-menu>li:hover>a, .skin-midnight .sidebar-menu>li.active>a {
+    background-color: #6CACE4;
+}
+ .skin-midnight .left-side, .skin-midnight .main-sidebar, .skin-midnight .wrapper {
+}
+ .skin-midnight .sidebar-menu > li.active > a, .skin-midnight .sidebar-menu > li:hover > a {
+     color:#fff;
+     border-left-color:#6CACE4;
+     font-size:17px;
+}
+ .skin-midnight .sidebar-menu > li > .treeview-menu {
+     margin:0 1px; 
+     color: white;
+     background:#2B65EC;
+     box-shadow:inset 0px 0px 7px #000000;
+     padding-bottom:2px;
+}
+
+.skin-midnight .sidebar-menu .treeview-menu>li>a {
+    color: white;
+    font-size:15px;
+}
+ .skin-midnight .sidebar a {
+     color:#ffffff ;
+     font-size:17px;
+    padding: 25px 15px 25px 15px;
+    display: block;
+}
+.skin-midnight .nav-tabs-custom>.nav-tabs>li.active>a {
+    color: #ffffff;
+}
+
+.nav-tabs-custom>.nav-tabs>li.active:hover>a, .nav-tabs-custom>.nav-tabs>li.active>a {
+    color: #ffffff;
+}
+.skin-midnight .content-wrapper, .skin-midnight .right-side {
+    background-color:#13294B;
+}
+
+/*Box modifications*/
+
+.box.box-solid.box-primary>.box-header {
+    color: #fff;
+    background: #DA3248;
+    background-color: #DA3248;
+}
+.skin-midnight .box.box-primary {
+    border-top-color: #6CACE4;
+    font-family: "Montserrat", Times, serif;
+    font-size:16px;
+}
+.box.box-solid.box-primary {
+    border: 4px solid #6CACE4;
+}
+
+.box-header .box-title, .box-header>.fa, .box-header>.glyphicon, .box-header>.ion {
+    font-size:20px;
+    font-family: "Montserrat", Times, serif;
+}
+.box.box-solid.box-info>.box-header {
+    color: #fff;
+    background: #F2A00F;
+    background-color: #F2A00F;
+}
+
+.skin-midnight .box.box-info {
+    font-family: "Montserrat", Times, serif;
+    border-top-color: #6CACE4;
+}
+.box.box-solid.box-info {
+    border: 4px solid #6CACE4;
+}
+
+.skin-midnight .box.box-danger {
+    font-family: "Montserrat", Times, serif;
+    font-size:16px;
+}
+
+.skin-midnight .box.box-warning {
+    font-family: "Montserrat", Times, serif;
+    font-size:16px;
+}
+
+.nav-tabs-custom>.nav-tabs>li {
+    font-family: "Montserrat", Times, serif;
+    font-size:18px;
+}
+
+.panel-default{
+    border-color:white;
+}
+.panel {
+    margin-bottom: 10px;
+    padding-left: -2px;
+    padding-right: -2px;
+    background-color: white;
+    border: 0px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+

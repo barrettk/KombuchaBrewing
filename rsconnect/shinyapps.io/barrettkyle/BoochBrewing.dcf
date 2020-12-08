@@ -1,0 +1,12 @@
+name: BoochBrewing
+title: BoochBrewing
+username:
+account: barrettkyle
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2935659
+bundleId: 3697726
+url: https://barrettkyle.shinyapps.io/BoochBrewing/
+when: 1601700208.84662
+asMultiple: FALSE
+asStatic: FALSE
