@@ -1,15 +1,13 @@
-mixedToFloat <- function(x){
-  is.integer  <- grepl("^\\d+$", x)
-  is.fraction <- grepl("^\\d+\\/\\d+$", x)
-  is.mixed    <- grepl("^\\d+ \\d+\\/\\d+$", x)
-  stopifnot(all(is.integer | is.fraction | is.mixed))
-  
-  numbers <- strsplit(x, "[ /]")
-  
-  ifelse(is.integer,  as.numeric(sapply(numbers, `[`, 1)),
-         ifelse(is.fraction, as.numeric(sapply(numbers, `[`, 1)) /
-                  as.numeric(sapply(numbers, `[`, 2)),
-                as.numeric(sapply(numbers, `[`, 1)) +
-                  as.numeric(sapply(numbers, `[`, 2)) /
-                  as.numeric(sapply(numbers, `[`, 3))))
-}
+suppressPackageStartupMessages({
+  library(shiny)
+  library(shinydashboard)
+  library(shinydashboardPlus)
+  library(shinyWidgets)
+  library(DT)
+  library(scales)
+})
+
+# Helper functions first, then the modules built on them. Nothing depends on
+# load order within either folder.
+for (file in list.files("functions", pattern = "\\.R$", full.names = TRUE)) source(file)
+for (file in list.files("modules", pattern = "\\.R$", full.names = TRUE)) source(file)

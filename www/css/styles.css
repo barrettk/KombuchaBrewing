@@ -1,0 +1,682 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+
+:root {
+  --navy-900: #0c1a33;
+  --navy-700: #13294b;
+  --navy-600: #163566;
+
+  --blue: #6cace4;
+  --amber: #f2a00f;
+  --red: #da3248;
+  --green: #2fa36b;
+  --brown: #b57a4d;
+
+  --ink: #16233a;
+  --ink-soft: #5a6b85;
+  --line: #dfe5ee;
+  --surface: #ffffff;
+  --surface-sunken: #f5f7fb;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 2px 14px rgba(6, 16, 33, 0.28);
+
+  --font-display: "Montserrat", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   Frame
+   ========================================================================== */
+
+body,
+.skin-midnight .wrapper,
+.skin-midnight .content-wrapper,
+.skin-midnight .right-side {
+  background-color: var(--navy-700);
+  font-family: var(--font-body);
+}
+
+.skin-midnight .main-header .logo,
+.skin-midnight .main-header .navbar,
+.skin-midnight .main-sidebar,
+.skin-midnight .left-side {
+  background-color: var(--navy-900);
+}
+
+.skin-midnight .main-header .logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  color: #ffffff;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0;
+}
+
+/* The logo is a fixed-height block rather than a line of text with an image
+   in it, so the mark and the wordmark stay aligned at both sidebar widths. */
+.skin-midnight .main-header .logo .logo-lg,
+.skin-midnight .main-header .logo .logo-mini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 12px;
+}
+
+.brand-mark {
+  height: 38px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.brand-text {
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.sidebar-collapse .main-header .logo .brand-mark {
+  height: 32px;
+}
+
+.sidebar-brand {
+  display: flex;
+  justify-content: center;
+  padding: 18px 20px 12px;
+}
+
+.brand-logo {
+  max-width: 190px;
+  width: 100%;
+  height: auto;
+}
+
+/* Collapsed, the sidebar is too narrow for the full logo to read as anything */
+.sidebar-collapse .sidebar-brand {
+  display: none;
+}
+
+.header-note {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  line-height: 50px;
+  padding: 0 18px;
+  letter-spacing: 0.02em;
+}
+
+.header-note .fa {
+  color: var(--blue);
+  margin-right: 6px;
+}
+
+.skin-midnight .sidebar-menu > li > a {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 16px;
+  border-left: 3px solid transparent;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.skin-midnight .sidebar-menu > li:hover > a,
+.skin-midnight .sidebar-menu > li.active > a {
+  background-color: rgba(108, 172, 228, 0.14);
+  border-left-color: var(--blue);
+  color: #ffffff;
+}
+
+.skin-midnight .sidebar hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 10px 16px;
+}
+
+.main-footer {
+  background-color: var(--navy-900);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+.main-footer strong {
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 10px;
+}
+
+.content-wrapper > .content {
+  padding: 20px 20px 8px;
+}
+
+/* ==========================================================================
+   Boxes and tab boxes
+   ========================================================================== */
+
+.box {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.box.box-solid > .box-header {
+  font-family: var(--font-display);
+  padding: 12px 18px;
+}
+
+.box.box-solid > .box-header .box-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.box.box-solid.box-primary > .box-header,
+.box.box-solid.box-info > .box-header {
+  background: var(--navy-600);
+  color: #ffffff;
+}
+
+.box.box-solid.box-danger > .box-header {
+  background: var(--red);
+}
+
+.box.box-solid.box-warning > .box-header {
+  background: var(--amber);
+}
+
+.box.box-solid.box-warning > .box-header .box-title,
+.box.box-solid.box-warning > .box-header .btn-box-tool {
+  color: #3d2a00;
+}
+
+.box,
+.box-body,
+.nav-tabs-custom,
+.nav-tabs-custom > .tab-content {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.box-body {
+  padding: 18px;
+}
+
+.nav-tabs-custom > .tab-content {
+  padding: 18px;
+}
+
+.nav-tabs-custom {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.nav-tabs-custom > .nav-tabs {
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-tabs-custom > .nav-tabs > li > a {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 13px 20px;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: var(--blue);
+}
+
+.nav-tabs-custom > .nav-tabs > li.active > a,
+.nav-tabs-custom > .nav-tabs > li.active:hover > a {
+  color: var(--ink);
+  background: var(--surface);
+}
+
+/* ==========================================================================
+   Control groups
+   ========================================================================== */
+
+.control-group {
+  background: var(--surface-sunken);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px 6px;
+  margin-bottom: 16px;
+}
+
+.control-group-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+
+.control-group-blue {
+  border-left-color: var(--blue);
+}
+.control-group-amber {
+  border-left-color: var(--amber);
+}
+.control-group-green {
+  border-left-color: var(--green);
+}
+.control-group-brown {
+  border-left-color: var(--brown);
+}
+.control-group-red {
+  border-left-color: var(--red);
+}
+
+.field-help {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: -6px 0 14px;
+}
+
+/* ==========================================================================
+   Form controls
+   ========================================================================== */
+
+.control-label,
+.skin-midnight .control-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+.form-control,
+.selectize-input {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  color: var(--ink);
+  height: 38px;
+}
+
+.form-control:focus,
+.selectize-input.focus {
+  background-color: var(--surface);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(108, 172, 228, 0.22);
+}
+
+.money-input .form-control {
+  color: #16704a;
+  font-weight: 600;
+}
+
+.irs--shiny .irs-bar,
+.irs--shiny .irs-single,
+.irs--shiny .irs-from,
+.irs--shiny .irs-to {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.irs--shiny .irs-handle {
+  border-color: var(--blue);
+}
+
+.irs--shiny .irs-min,
+.irs--shiny .irs-max {
+  background: var(--surface-sunken);
+  color: var(--ink-soft);
+}
+
+.btn-group-container-sw .btn,
+.btn-group-justified > .btn {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.btn-group-container-sw .btn.active,
+.btn-group-justified > .btn.active {
+  background: var(--navy-600);
+  border-color: var(--navy-600);
+  color: #ffffff;
+}
+
+.bootstrap-select .dropdown-toggle {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  height: 38px;
+}
+
+/* ==========================================================================
+   Stat cards
+   ========================================================================== */
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(12, 26, 51, 0.08);
+  padding: 14px 16px;
+}
+
+.stat-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #ffffff;
+  background: var(--blue);
+}
+
+.stat-card-body {
+  min-width: 0;
+}
+
+.stat-card-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.stat-card-value {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.stat-card-note {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.stat-card-blue .stat-card-icon {
+  background: var(--blue);
+}
+.stat-card-amber .stat-card-icon {
+  background: var(--amber);
+}
+.stat-card-green .stat-card-icon {
+  background: var(--green);
+}
+.stat-card-red .stat-card-icon {
+  background: var(--red);
+}
+.stat-card-brown .stat-card-icon {
+  background: var(--brown);
+}
+
+/* Cards sitting on the page rather than inside a box carry the page shadow */
+.content-wrapper .stat-row > .stat-card {
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   Cost tables
+   ========================================================================== */
+
+.cost-table {
+  width: 100%;
+  margin-top: 6px;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.cost-table thead th {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--line);
+  padding: 8px 12px;
+}
+
+.cost-table tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cost-table tr.cost-group th {
+  padding: 12px 12px 6px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy-600);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-sunken);
+}
+
+.cost-table .cost-item {
+  font-weight: 500;
+}
+
+.cost-table .cost-numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cost-table .cost-rate {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.cost-table tfoot th {
+  padding: 12px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  border-top: 2px solid var(--navy-600);
+}
+
+.cost-empty {
+  padding: 22px;
+  text-align: center;
+  color: var(--ink-soft);
+  background: var(--surface-sunken);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 16px;
+}
+
+.btn-app,
+.btn-app-link {
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  color: #ffffff;
+}
+
+.btn-app:hover,
+.btn-app:focus,
+.btn-app-link:hover,
+.btn-app-link:focus {
+  color: #ffffff;
+  filter: brightness(1.08);
+}
+
+.btn-app-primary {
+  background: var(--navy-600);
+}
+.btn-app-success {
+  background: var(--green);
+}
+.btn-app-danger {
+  background: var(--red);
+}
+.btn-app-muted {
+  background: var(--ink-soft);
+}
+.btn-app-link {
+  background: var(--navy-600);
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Data table
+   ========================================================================== */
+
+table.dataTable thead th {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--line);
+}
+
+table.dataTable tbody td {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+table.dataTable tbody tr.selected td {
+  background-color: rgba(108, 172, 228, 0.22) !important;
+  box-shadow: none !important;
+  color: var(--ink);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--navy-600) !important;
+  border-color: var(--navy-600) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Notifications
+   ========================================================================== */
+
+#shiny-notification-panel {
+  width: 340px;
+}
+
+.shiny-notification {
+  border-radius: var(--radius-sm);
+  border: none;
+  box-shadow: var(--shadow);
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Midnight skin overrides
+
+   The skin is loaded after this stylesheet and darkens every content surface
+   it can reach, which is right for the frame and wrong for the page. These
+   rules take the content back. They carry a `body` prefix purely to outrank
+   the skin's own `.skin-midnight .thing` selectors on equal footing.
+   ========================================================================== */
+
+body.skin-midnight .box,
+body.skin-midnight .box-body,
+body.skin-midnight .nav-tabs-custom,
+body.skin-midnight .nav-tabs-custom > .tab-content {
+  background-color: var(--surface);
+  color: var(--ink);
+}
+
+body.skin-midnight .box-body label,
+body.skin-midnight .tab-content label,
+body.skin-midnight .box-body p,
+body.skin-midnight .box-body h4,
+body.skin-midnight .box-body h5,
+body.skin-midnight .control-group-title {
+  color: var(--ink);
+}
+
+body.skin-midnight .control-group-title,
+body.skin-midnight .field-help {
+  color: var(--ink-soft);
+}
+
+/* The skin colors the pagination text to sit on its own dark chrome, which
+   leaves the current page invisible against the highlight. */
+body.skin-midnight .dataTables_wrapper .dataTables_paginate .paginate_button,
+body.skin-midnight .dataTables_wrapper .dataTables_info {
+  color: var(--ink-soft) !important;
+}
+
+body.skin-midnight
+  .dataTables_wrapper
+  .dataTables_paginate
+  .paginate_button.current {
+  color: #ffffff !important;
+}
+
+body.skin-midnight .form-control,
+body.skin-midnight .selectize-input {
+  background-color: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+body.skin-midnight .money-input .form-control {
+  color: #16704a;
+}
+
+body.skin-midnight .nav-tabs-custom > .nav-tabs {
+  background-color: var(--surface-sunken);
+  border-bottom-color: var(--line);
+}
+
+body.skin-midnight .nav-tabs-custom > .nav-tabs > li > a {
+  color: var(--ink-soft);
+}
+
+body.skin-midnight .nav-tabs-custom > .nav-tabs > li.active > a,
+body.skin-midnight .nav-tabs-custom > .nav-tabs > li.active:hover > a {
+  background-color: var(--surface);
+  border-left-color: var(--line);
+  border-right-color: var(--line);
+  color: var(--ink);
+}
+
+body.skin-midnight .main-footer {
+  background-color: var(--navy-900);
+  border-top-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.55);
+}
